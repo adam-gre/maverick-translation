@@ -1,0 +1,135 @@
+:root {
+    --ml-color-primary: #222B56;
+    --ml-color-secondary: #54BFCB;
+}
+
+#ml_interpreter {
+    position: fixed;
+    top: 55%;
+    left: 72.5%;
+    width: clamp(250px, 35vw, 350px);
+    max-width: 650px;
+    min-width: 250px;
+    height: auto;
+    background: var(--ml-color-primary);
+    border-radius: 24px;
+    padding: 10px;
+    z-index: 100;
+    display: none;
+}
+ video {
+    aspect-ratio:1.25/1;
+    object-fit: cover;
+    border-radius: 14px;
+    padding: 0;
+    width: 100%;
+}
+
+ #ml_interpreter_video_container {
+    border-radius: 24px;
+    overflow: hidden;
+    background: white;
+    padding: 0;
+    display: flex;
+}
+
+ #ml_interpreter_controls {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+}
+
+ #ml_interpreter_controls a {
+    text-align: center;
+    border-radius: 14px;
+    color: white;
+}
+
+ 
+ #ml_interpreter_controls a:hover {
+    opacity: 0.75;
+}
+
+ #ml_interpreter_close svg, #ml_interpreter_zoomin svg, #ml_interpreter_zoomout svg {
+    stroke: white;
+    fill: white;
+}
+
+ #ml_interpreter_close  {
+    display: flex;
+    gap: 5px
+}
+
+ #ml_interpreter_signthispage {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 99;
+    transition: all 0.25s ease;
+}
+
+ #ml_interpreter_signthispage:hover {
+    opacity: 0.75;
+}
+
+ #ml_interpreter_open {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ #ml_interpreter_signthispage_text {
+    background: var(--ml-color-primary);
+    padding-right: 30px;
+    padding-left: 10px;
+    transform: translateX(20px);
+    z-index: 1;
+    color: white;
+    border-radius: 17px;
+    filter: drop-shadow(rgba(0,0,0,0.1) 0 2px 5px);
+}
+
+@media only screen and (max-width: 480px) {
+     #ml_interpreter_signthispage_text {
+    font-size: 12px;
+}
+}
+
+ #ml_interpreter_signthispage svg {
+    z-index: 2;
+}
+
+[ml_interpreter] {
+    position: relative;
+}
+
+[ml_interpreter]:hover::after {
+    cursor: pointer;
+    content: " ";
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    width: 102%;
+    height: 102%;
+    background-color: var(--ml-color-secondary);
+    border-radius: 25px;
+    opacity: 0.2;
+    transition: background-color 0.5s ease;
+}
+
+[ml_interpreter]::after {
+    transition: all 0.5s ease;
+}
+
+ #ml_interpreter_grid {
+    display: grid;
+    justify-content: right;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+    
+}
